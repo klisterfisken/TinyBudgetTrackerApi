@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#vecko-info {
+    margin-bottom: 1rem;
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#kvar-budget {
+    font-size: 0.8rem;
+    align-self: flex-end;
+}
+/* #historik-meddelande {} */
+
+.over-budget {
+    font-weight: bold;
+    color: #FF9B85;
+}
+
+#matare {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dag {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.dag-rubrik {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+#dag-rullad .fyll {
+    background-color: #ccc;
+}
+
+.dag-namn {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.bar {
+    width: 300px;
+    height: 40px;
+    border: 1.5px solid #333;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.fyll {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.belopp {
+    font-size: 0.8rem;
+}
+
+.dag[data-dag="0"] .fyll {
+    background-color: #FFD97D;
+}
+
+.dag[data-dag="1"] .fyll {
+    background-color: #FFCE7F;
+}
+
+.dag[data-dag="2"] .fyll {
+    background-color: #FFC480;
+}
+
+.dag[data-dag="3"] .fyll {
+    background-color: #FFB881;
+}
+
+.dag[data-dag="4"] .fyll {
+    background-color: #FFAD83;
+}
+
+.dag[data-dag="5"] .fyll {
+    background-color: #FFA384;
+}
+
+.dag[data-dag="6"] .fyll {
+    background-color: #FF9B85;
+}
+
+#inmatning {
+    display: flex;
+    width: auto;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+#belopp-input {
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #333;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+
+#lagg-till {
+    background-color: #FFD97D;
+    transition: background-color 0.2s ease;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #333;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    :hover {
+        background-color: #FF9B85;
+    }
+}

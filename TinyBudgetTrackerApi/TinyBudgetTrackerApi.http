@@ -1,0 +1,6 @@
+@TinyBudgetTrackerApi_HostAddress = http://localhost:5201
+
+GET {{TinyBudgetTrackerApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

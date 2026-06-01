@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <section id="vecko-info">
+            <p id="kvar-budget"></p>
+            <p id="historik-meddelande"></p>
+        </section>
+
+        <section id="matare">
+            <div class="dag" data-dag="0">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">MÅNDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="1">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">TISDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="2">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">ONSDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="3">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">TORSDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="4">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">FREDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="5">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">LÖRDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+            <div class="dag" data-dag="6">
+                <div class="dag-rubrik">
+                    <span class="dag-namn">SÖNDAG</span>
+                    <span class="belopp"></span>
+                </div>
+                <div class="bar">
+                    <div class="fyll"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inmatning">
+            <input type="number" id="belopp-input" placeholder="Belopp i kr" />
+            <button id="lagg-till">Lägg till</button>
+        </section>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
