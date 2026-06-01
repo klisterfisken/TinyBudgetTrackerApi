@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\img\android-chrome-192x192.png" />
+    <None Include="wwwroot\img\apple-touch-icon.png" />
+    <None Include="wwwroot\img\favicon-16x16.png" />
+    <None Include="wwwroot\img\favicon-32x32.png" />
+    <None Include="wwwroot\img\favicon.ico" />
+    <None Include="wwwroot\img\site.webmanifest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
   </ItemGroup>
 
