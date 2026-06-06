@@ -149,9 +149,9 @@ main {
     align-items: center;
 }
 
-    #historik-overlay.aktiv {
-        display: flex;
-    }
+#historik-overlay.aktiv {
+    display: flex;
+}
 
 #historik-modal {
     background: white;
@@ -179,10 +179,10 @@ main {
     font-size: 0.8rem;
 }
 
-    #historik-lista li {
-        display: flex;
-        justify-content: space-between;
-    }
+#historik-lista li {
+    display: flex;
+    justify-content: space-between;
+}
 
 #historik-footer {
     margin-top: 2rem;
@@ -222,6 +222,6 @@ main {
     transition: background-color 0.2s ease;
 }
 
-    #historik-knapp:hover {
-        background-color: #FF9B85;
-    }
+#historik-knapp:hover {
+    background-color: #FF9B85;
+}
