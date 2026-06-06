@@ -141,6 +141,7 @@ main {
     z-index: 100;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 #historik-overlay.aktiv {
@@ -188,14 +189,14 @@ main {
 
 #historik-pil-vanster,
 #historik-pil-hoger {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    visibility: hidden;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #aaa;
+    color: white;
+    position: static;
+    transform: none;
 }
 
 #historik-pil-vanster {

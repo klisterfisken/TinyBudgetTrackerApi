@@ -32,8 +32,8 @@
             lista.appendChild(li);
         });
 
-        document.getElementById('historik-pil-vanster').style.display = 'block';
-        document.getElementById('historik-pil-hoger').style.display = historikvecka < nuvarandeVecka ? 'block' : 'none';
+        document.getElementById('historik-pil-vanster').style.visibility = 'visible';
+        document.getElementById('historik-pil-hoger').style.visibility = historikvecka < nuvarandeVecka ? 'visible' : 'hidden';
     }
 
     document.getElementById('historik-knapp').addEventListener('click', oppnaHistorik);
