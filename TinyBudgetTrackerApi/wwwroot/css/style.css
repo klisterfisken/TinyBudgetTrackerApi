@@ -11,6 +11,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding-top: 2rem;
+    font-size: 0.8rem;
 }
 
 main {
@@ -28,7 +29,6 @@ main {
 }
 
 #kvar-budget {
-    font-size: 0.8rem;
     align-self: flex-end;
 }
 
@@ -60,7 +60,6 @@ main {
 }
 
 .dag-namn {
-    font-size: 0.8rem;
     letter-spacing: 0.05em;
 }
 
@@ -76,10 +75,6 @@ main {
     height: 100%;
     width: 0%;
     transition: width 0.3s ease;
-}
-
-.belopp {
-    font-size: 0.8rem;
 }
 
 .dag[data-dag="0"] .fyll {
@@ -122,7 +117,6 @@ main {
     padding: 0.5rem 1rem;
     border: 1.5px solid #333;
     border-radius: 0.5rem;
-    font-size: 0.8rem;
 }
 
 #lagg-till {
@@ -131,7 +125,6 @@ main {
     padding: 0.5rem 1rem;
     border: 1.5px solid #333;
     border-radius: 0.5rem;
-    font-size: 0.8rem;
     cursor: pointer;
     flex: 1;
 
@@ -172,12 +165,15 @@ main {
     letter-spacing: 0.05em;
 }
 
+#historik-rubrik {
+    margin-bottom: 0.5rem;
+}
+
 #historik-lista {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    font-size: 0.8rem;
 }
 
 #historik-lista li {
@@ -187,7 +183,6 @@ main {
 
 #historik-footer {
     margin-top: 2rem;
-    font-size: 0.8rem;
     color: #aaa;
 }
 
@@ -217,7 +212,6 @@ main {
     border: 1.5px solid #333;
     border-radius: 0.5rem;
     background-color: #FF9B85;
-    font-size: 0.8rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
 

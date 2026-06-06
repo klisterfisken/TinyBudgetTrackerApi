@@ -26,7 +26,7 @@
             const datum = document.createElement('span');
             const belopp = document.createElement('span');
             datum.textContent = t.datum.replace('T', ' ');
-            belopp.textContent = `- ${t.belopp.toFixed(2)} SEK`;
+            belopp.textContent = `${t.belopp < 0 ? '+' : '-'} ${Math.abs(t.belopp).toFixed(2)} SEK`;
             li.appendChild(datum);
             li.appendChild(belopp);
             lista.appendChild(li);
