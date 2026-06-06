@@ -16,11 +16,12 @@ async function sparaHistorik(kvar, vecka) {
 
 async function loggaTransaktion(belopp) {
     const nu = new Date();
+    const lokalTid = new Date(nu.getTime() - nu.getTimezoneOffset() * 60000).toISOString().slice(0, 19);
     await fetch('/api/transaktion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            datum: nu.toISOString(),
+            datum: lokalTid,
             belopp: belopp,
             vecka: getVeckonummer()
         })
