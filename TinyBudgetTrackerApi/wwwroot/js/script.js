@@ -113,21 +113,21 @@ function getVeckonummer() {
     return Math.ceil((((dag - arStart) / 86400000) + 1) / 7);
 }
 
-async function sparaTillServer(kvar, rullad = 0) {
-    await fetch('/api/data', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ vecka: getVeckonummer(), kvar, rullad })
-    });
-}
+// async function sparaTillServer(kvar, rullad = 0) {
+//     await fetch('/api/data', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ vecka: getVeckonummer(), kvar, rullad })
+//     });
+// }
 
-async function sparaHistorik(kvar, vecka) {
-    await fetch('/api/historik', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ vecka, kvar })
-    });
-}
+// async function sparaHistorik(kvar, vecka) {
+//     await fetch('/api/historik', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ vecka, kvar })
+//     });
+// }
 
 document.getElementById('lagg-till').addEventListener('click', () => {
     const input = document.getElementById('belopp-input');
