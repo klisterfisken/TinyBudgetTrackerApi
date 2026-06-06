@@ -39,6 +39,7 @@ function laggTillBelopp(belopp) {
     kvar = Math.min(kvar - belopp, rullad + TOTAL);
     renderMatare(kvar, rullad);
     sparaTillServer(kvar, rullad);
+    loggaTransaktion(belopp);
 }
 
 document.getElementById('lagg-till').addEventListener('click', () => {
