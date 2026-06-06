@@ -138,3 +138,90 @@ main {
         background-color: #FF9B85;
     }
 }
+
+#historik-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+    #historik-overlay.aktiv {
+        display: flex;
+    }
+
+#historik-modal {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 85vw;
+    max-width: 400px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#historik-vecka {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+#historik-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+    #historik-lista li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+#historik-footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+#historik-pil-vanster,
+#historik-pil-hoger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+#historik-pil-vanster {
+    left: -2.5rem;
+}
+
+#historik-pil-hoger {
+    right: -2.5rem;
+}
+
+#historik-knapp {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #333;
+    border-radius: 0.5rem;
+    background-color: #FFD97D;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    #historik-knapp:hover {
+        background-color: #FF9B85;
+    }

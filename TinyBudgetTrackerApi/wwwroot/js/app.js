@@ -27,14 +27,6 @@ async function init() {
     document.getElementById('belopp-input').focus();
 }
 
-function getVeckonummer() {
-    const nu = new Date();
-    const dag = new Date(Date.UTC(nu.getFullYear(), nu.getMonth(), nu.getDate()));
-    dag.setUTCDate(dag.getUTCDate() + 4 - (dag.getUTCDay() || 7));
-    const arStart = new Date(Date.UTC(dag.getUTCFullYear(), 0, 1));
-    return Math.ceil((((dag - arStart) / 86400000) + 1) / 7);
-}
-
 function laggTillBelopp(belopp) {
     kvar = Math.min(kvar - belopp, rullad + TOTAL);
     renderMatare(kvar, rullad);

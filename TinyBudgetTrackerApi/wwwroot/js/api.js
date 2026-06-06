@@ -1,4 +1,12 @@
-﻿async function sparaTillServer(kvar, rullad = 0) {
+﻿function getVeckonummer() {
+    const nu = new Date();
+    const dag = new Date(Date.UTC(nu.getFullYear(), nu.getMonth(), nu.getDate()));
+    dag.setUTCDate(dag.getUTCDate() + 4 - (dag.getUTCDay() || 7));
+    const arStart = new Date(Date.UTC(dag.getUTCFullYear(), 0, 1));
+    return Math.ceil((((dag - arStart) / 86400000) + 1) / 7);
+}
+
+async function sparaTillServer(kvar, rullad = 0) {
     await fetch('/api/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
