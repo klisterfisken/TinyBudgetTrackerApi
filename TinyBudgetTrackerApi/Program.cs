@@ -30,6 +30,7 @@ app.UseStaticFiles();
 var dataDir = Path.Combine(AppContext.BaseDirectory, "data");
 var dataFil = Path.Combine(dataDir, "data.json");
 var historikFil = Path.Combine(dataDir, "historik.txt");
+var transaktionerFil = Path.Combine(dataDir, "transaktioner.json");
 
 app.MapGet("/api/data", () =>
 {
@@ -58,6 +59,24 @@ app.MapPost("/api/historik", async (HttpContext context) =>
 
     await File.AppendAllTextAsync(historikFil, rad + Environment.NewLine);
     return Results.Ok();
+});
+
+app.MapPost("/api/transaktion", async (HttpContext context) =>
+{
+var json = await new StreamReader(context.Request.Body).ReadToEndAsync();
+var befintliga = await File.ReadAllTextAsync(transaktionerFil);
+var lista = JsonSerializer.Deserialize<List<Dictionary<string, JsonElement>>>(befintliga)
+    ?? new List<Dictionary<string, JsonElement>>();
+var nyPost = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
+lista.Add(nyPost);
+await File.WriteAllTextAsync(transaktionerFil, JsonSerializer.Serialize(lista));
+return Results.Ok();
+});
+
+app.MapGet("/api/transaktioner", async () =>
+{
+    var json = await File.ReadAllTextAsync(transaktionerFil);
+    return Results.Content(json, "application/json");
 });
 
 app.Run();

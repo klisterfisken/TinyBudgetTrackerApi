@@ -91,9 +91,28 @@
         <section id="inmatning">
             <input type="number" id="belopp-input" placeholder="Belopp i kr" />
             <button id="lagg-till">Lägg till</button>
+            <button id="historik-knapp">Historik</button>
         </section>
     </main>
-    <script src="/js/script.js"></script>
+
+    <div id="historik-overlay">
+        <button id="historik-pil-vanster">◀</button>
+        <div id="historik-modal">
+            <h2 id="historik-vecka"></h2>
+            <p id="historik-rubrik">Loggade inköp:</p>
+            <ul id="historik-lista"></ul>
+            <div id="historik-footer">
+                <p>Bankat: <span id="historik-bankat"></span></p>
+                <p>Totalt bankat: <span id="historik-totalt-bankat"></span></p>
+            </div>
+        </div>
+        <button id="historik-pil-hoger">▶</button>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/render.js"></script>
+    <script src="/js/historik.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
