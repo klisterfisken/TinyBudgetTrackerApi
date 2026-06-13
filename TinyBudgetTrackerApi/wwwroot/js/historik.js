@@ -2,6 +2,7 @@
     let historikvecka = getVeckonummer();
     let allaTransaktioner = [];
     let tidigasteVecka = 0;
+    let touchStartX = 0;
 
     async function oppnaHistorik() {
         allaTransaktioner = await hamtaTransaktioner();
@@ -66,6 +67,25 @@
     document.getElementById('historik-pil-hoger').addEventListener('click', () => {
         if (historikvecka < getVeckonummer()) {
             historikvecka++;
+            renderHistorik();
+        }
+    });
+
+    document.getElementById('historik-modal').addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    document.getElementById('historik-modal').addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) < 50) return;
+
+        if (diff > 0 && historikvecka < getVeckonummer()) {
+            historikvecka++;
+            renderHistorik();
+        } else if (diff < 0 && historikvecka > tidigasteVecka) {
+            historikvecka--;
             renderHistorik();
         }
     });
