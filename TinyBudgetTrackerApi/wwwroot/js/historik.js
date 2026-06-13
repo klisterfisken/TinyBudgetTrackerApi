@@ -18,6 +18,14 @@
         document.getElementById('historik-overlay').classList.remove('aktiv');
     }
 
+    function animeraModal(riktning) {
+        const modal = document.getElementById('historik-modal');
+        const klass = riktning === 'hoger' ? 'slide-left' : 'slide-right';
+        modal.classList.remove('slide-right', 'slide-left');
+        void modal.offsetWidth;
+        modal.classList.add(klass);
+    }
+
     function renderHistorik() {
         const veckansTransaktioner = allaTransaktioner.filter(t => t.vecka === historikvecka);
         const nuvarandeVecka = getVeckonummer();
@@ -60,6 +68,7 @@
     document.getElementById('historik-pil-vanster').addEventListener('click', () => {
         if (historikvecka > tidigasteVecka) {
             historikvecka--;
+            animeraModal('hoger');
             renderHistorik();
         }
     });
@@ -67,6 +76,7 @@
     document.getElementById('historik-pil-hoger').addEventListener('click', () => {
         if (historikvecka < getVeckonummer()) {
             historikvecka++;
+            animeraModal('vanster');
             renderHistorik();
         }
     });
@@ -83,9 +93,11 @@
 
         if (diff > 0 && historikvecka < getVeckonummer()) {
             historikvecka++;
+            animeraModal('vanster');
             renderHistorik();
         } else if (diff < 0 && historikvecka > tidigasteVecka) {
             historikvecka--;
+            animeraModal('hoger');
             renderHistorik();
         }
     });

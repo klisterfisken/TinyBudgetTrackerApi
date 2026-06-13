@@ -142,10 +142,11 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-}
+    overflow: hidden;
 
-#historik-overlay.aktiv {
-    display: flex;
+    &.aktiv {
+        display: flex;
+    }
 }
 
 #historik-modal {
@@ -161,6 +162,14 @@ main {
     &.historisk {
         color: #aaa;
     }
+}
+
+#historik-modal.slide-right {
+    animation: slideInFromRight 0.2s ease;
+}
+
+#historik-modal.slide-left {
+    animation: slideInFromLeft 0.2s ease;
 }
 
 #historik-vecka {
@@ -221,5 +230,29 @@ main {
 
     &:hover {
         background-color: #FFD97D;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
