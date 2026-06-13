@@ -157,6 +157,10 @@ main {
     position: relative;
     max-height: 80vh;
     overflow-y: auto;
+
+    &.historisk {
+        color: #aaa;
+    }
 }
 
 #historik-vecka {
@@ -184,7 +188,6 @@ main {
 
 #historik-footer {
     margin-top: 2rem;
-    color: #aaa;
 }
 
 #historik-pil-vanster,

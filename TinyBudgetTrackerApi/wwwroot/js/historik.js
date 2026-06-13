@@ -1,10 +1,14 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     let historikvecka = getVeckonummer();
     let allaTransaktioner = [];
+    let tidigasteVecka = 0;
 
     async function oppnaHistorik() {
         allaTransaktioner = await hamtaTransaktioner();
         historikvecka = getVeckonummer();
+        tidigasteVecka = allaTransaktioner.length > 0
+            ? Math.min(...allaTransaktioner.map(t => t.vecka))
+            : getVeckonummer();
         renderHistorik();
         document.getElementById('historik-overlay').classList.add('aktiv');
     }
@@ -16,6 +20,13 @@
     function renderHistorik() {
         const veckansTransaktioner = allaTransaktioner.filter(t => t.vecka === historikvecka);
         const nuvarandeVecka = getVeckonummer();
+
+        const modal = document.getElementById('historik-modal');
+        if (historikvecka < nuvarandeVecka) {
+            modal.classList.add('historisk');
+        } else {
+            modal.classList.remove('historisk');
+        }
 
         document.getElementById('historik-vecka').textContent = `VECKA ${historikvecka}`;
 
@@ -32,7 +43,10 @@
             lista.appendChild(li);
         });
 
-        document.getElementById('historik-pil-vanster').style.visibility = 'visible';
+        document.getElementById('historik-bankat').textContent = '0,00 SEK';
+        document.getElementById('historik-totalt-bankat').textContent = '0,00 SEK';
+
+        document.getElementById('historik-pil-vanster').style.visibility = historikvecka > tidigasteVecka ? 'visible' : 'hidden';
         document.getElementById('historik-pil-hoger').style.visibility = historikvecka < nuvarandeVecka ? 'visible' : 'hidden';
     }
 
@@ -43,12 +57,16 @@
     });
 
     document.getElementById('historik-pil-vanster').addEventListener('click', () => {
-        historikvecka--;
-        renderHistorik();
+        if (historikvecka > tidigasteVecka) {
+            historikvecka--;
+            renderHistorik();
+        }
     });
 
     document.getElementById('historik-pil-hoger').addEventListener('click', () => {
-        historikvecka++;
-        renderHistorik();
+        if (historikvecka < getVeckonummer()) {
+            historikvecka++;
+            renderHistorik();
+        }
     });
 });
